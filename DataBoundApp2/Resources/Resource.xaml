@@ -1,0 +1,11 @@
+﻿<ResourceDictionary 
+    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+    xmlns:system="clr-namespace:System;assembly=mscorlib"
+    xmlns:viewModels="clr-namespace:InteligentnyKoszyk.ViewModels">
+
+    <viewModels:List x:Key="MainViewModel"/>
+    <viewModels:Product x:Key="Produkty"/>
+
+
+</ResourceDictionary> 
