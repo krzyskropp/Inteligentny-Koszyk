@@ -18,19 +18,10 @@ namespace InteligentnyKoszyk
                "dSqhCYXThliQTjbpYmggjhhPEhPsXG56"
             );
 
-        /// <summary>
-        /// A static ViewModel used by the views to bind against.
-        /// </summary>
-        /// <returns>The MainViewModel object.</returns>
-
-
-        /// <summary>
-        /// Provides easy access to the root frame of the Phone Application.
-        /// </summary>
-        /// <returns>The root frame of the Phone Application.</returns>
         public static PhoneApplicationFrame RootFrame { get; private set; }
         public List ActiveList { get; internal set; }
 
+        // zmienne przenoszone przez poszczególne ekrany
         public int count = 5;
         public string ListNameAdd;
         public string ListDateAdd;
