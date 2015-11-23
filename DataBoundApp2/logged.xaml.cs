@@ -42,7 +42,7 @@ namespace InteligentnyKoszyk
 
         private void button_Click(object sender, System.Windows.RoutedEventArgs e)
         {
-            NavigationService.Navigate(new Uri("/create.xaml", UriKind.Relative));
+            NavigationService.Navigate(new Uri("/create_list.xaml", UriKind.Relative));
         }
 
         private void button_Copy_Click(object sender, System.Windows.RoutedEventArgs e)
