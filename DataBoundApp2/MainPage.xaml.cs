@@ -38,7 +38,6 @@ namespace InteligentnyKoszyk
             List<List> MainList = await App.MobileService.GetTable<List>().OrderByDescending(c => c.Date).ToListAsync();
             thisApp.count = MainList.Count;
 
-
             FlipTileData newTile = new FlipTileData()
             {
                 Title = "           iKoszyk",
