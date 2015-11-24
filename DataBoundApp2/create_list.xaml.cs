@@ -5,6 +5,8 @@ using Microsoft.Phone.Controls;
 using InteligentnyKoszyk.ViewModels;
 using System.Collections.ObjectModel;
 using System.Windows.Navigation;
+using Microsoft.Phone.Shell;
+using System.Linq;
 
 namespace InteligentnyKoszyk
 {
@@ -46,6 +48,22 @@ namespace InteligentnyKoszyk
 
             await App.MobileService.GetTable<List>().InsertAsync(List);
 
+            ShellTile primaryTile = ShellTile.ActiveTiles.FirstOrDefault();
+            FlipTileData newTile = new FlipTileData()
+            {
+                Title = "           iKoszyk",
+                Count = (await App.MobileService.GetTable<List>().ToListAsync()).Count,
+                BackgroundImage = new Uri("/Assets/Tiles/basketmedium.png", UriKind.Relative),
+                SmallBackgroundImage = new Uri("/Assets/Tiles/basket.png", UriKind.Relative),
+                WideBackgroundImage = new Uri("/Assets/Tiles/basketwide.png", UriKind.Relative),
+                BackTitle = "Inteligentny Koszyk",
+                BackContent = "Zarządzaj swoim koszykiem",
+                WideBackContent = "Inteligentna aplikacja wspomagająca zakupy :-)",
+                BackBackgroundImage = new Uri("", UriKind.Relative),
+                WideBackBackgroundImage = new Uri("", UriKind.Relative)
+            };
+
+            primaryTile.Update(newTile);
             NavigationService.Navigate(new Uri("/logged.xaml", UriKind.Relative));
         }
 
